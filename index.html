@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>La Mochila de La Opresión Del Neoliberalismo - Identidad Visual</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+        body {
+            width: 100vw;
+            height: 100vh;
+            cursor: none;
+        }
+        img {
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            cursor: pointer;
+            border: none;
+            border-radius: 0;
+            box-shadow: none;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <img id="galeria" src="La Mochila de La Opresión Del Neoliberalismo_page-0001.jpg" alt="Imagen de galería">
+    <script>
+        const imagenes = [
+            "La Mochila de La Opresión Del Neoliberalismo_page-0001.jpg",
+            "La Mochila de La Opresión Del Neoliberalismo_page-0002.jpg",
+            "La Mochila de La Opresión Del Neoliberalismo_page-0003.jpg",
+            "La Mochila de La Opresión Del Neoliberalismo_page-0004.jpg",
+            "La Mochila de La Opresión Del Neoliberalismo_page-0005.jpg",
+            "La Mochila de La Opresión Del Neoliberalismo_page-0006.jpg",
+            "La Mochila de La Opresión Del Neoliberalismo_page-0007.jpg",
+            "La Mochila de La Opresión Del Neoliberalismo_page-0008.jpg",
+            "La Mochila de La Opresión Del Neoliberalismo_page-0009.jpg",
+            "La Mochila de La Opresión Del Neoliberalismo_page-0010.jpg",
+            "La Mochila de La Opresión Del Neoliberalismo_page-0011.jpg",
+            "La Mochila de La Opresión Del Neoliberalismo_page-0012.jpg",
+            "La Mochila de La Opresión Del Neoliberalismo_page-0013.jpg",
+            "La Mochila de La Opresión Del Neoliberalismo_page-0014.jpg",
+            "La Mochila de La Opresión Del Neoliberalismo_page-0015.jpg"
+        ];
+        let indice = 0;
+        const img = document.getElementById('galeria');
+        img.onclick = function() {
+            indice = (indice + 1) % imagenes.length;
+            img.src = imagenes[indice];
+        };
+    </script>
+</body>
+</html>
