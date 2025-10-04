@@ -26,9 +26,31 @@
             box-shadow: none;
             display: block;
         }
+        #fullscreen-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 10;
+            padding: 12px 24px;
+            font-size: 18px;
+            background: #222;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            opacity: 0.85;
+            transition: opacity 0.3s;
+        }
+        #fullscreen-btn:active {
+            opacity: 1;
+        }
+        #fullscreen-btn.hide {
+            display: none;
+        }
     </style>
 </head>
 <body>
+    <button id="fullscreen-btn">Pantalla completa</button>
     <img id="galeria" src="La Mochila de La Opresión Del Neoliberalismo_page-0001.jpg" alt="Imagen de galería">
     <script>
         const imagenes = [
@@ -54,6 +76,20 @@
             indice = (indice + 1) % imagenes.length;
             img.src = imagenes[indice];
         };
+
+        const btn = document.getElementById('fullscreen-btn');
+        btn.onclick = function() {
+            if (document.documentElement.requestFullscreen) {
+                document.documentElement.requestFullscreen();
+            } else if (document.documentElement.webkitRequestFullscreen) {
+                document.documentElement.webkitRequestFullscreen();
+            } else if (document.documentElement.msRequestFullscreen) {
+                document.documentElement.msRequestFullscreen();
+            }
+        };
+        setTimeout(() => {
+            btn.classList.add('hide');
+        }, 2000);
     </script>
 </body>
 </html>
